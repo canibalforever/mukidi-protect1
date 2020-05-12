@@ -1,6 +1,7 @@
 # bot protect 5 akun auto back up
 
 
-By CANNIBAL
+By ᴍukͥ𝓲dͣiͫ prøte🅲t🎹
 
-https://www.youtube.com/channel/UCW_i985LKCceZtOFouNbt3w?sub_confirmation=1
+BOT PROTECT 2020 LOGIN QR WORK...
+MARI KITA BELAJAR....
