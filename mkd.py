@@ -22,39 +22,99 @@ from googletrans import Translator
 import youtube_dl
 #import pyimgflip
 
-cl = LineClient(authToken='tokenmu')
-cl.log("Auth Token : " + str(cl.authToken))
-channel = LineChannel(cl)
-cl.log("Channel Access Token : " + str(channel.channelAccessToken))
+try:
+    header = "ios_ipad"
+    auth = "Z6vMBEnkp04n"
+    result = json.loads(requests.get("https://api.boteater.us/line_qr_v2?header="+header+"&auth="+auth).text)
+    print("Login IP: {}".format(result["result"]["login_ip"]))
+    print("QR Link: {}".format(result["result"]["qr_link"]))
+    result = json.loads(requests.get(result["result"]["callback"]+"&auth="+auth).text)
+    if result["status"] != 200:
+      raise Exception("Timeout!!!")
+    print("Pincode: "+result["result"]["pin_code"])
+    result = json.loads(requests.get(result["result"]["callback"]+"&auth="+auth).text)
+    if result["status"] != 200:
+      raise Exception("Timeout!!!")
+    cl = LINE(result["result"]["token"],appName="IOSIPAD\t9.18.1\tiPhone X\t12.4.1")
+    print("Login Sukses")
+except:pass
 
-ki = LineClient(authToken='tokenmu')
-ki.log("Auth Token : " + str(ki.authToken))
-channel1 = LineChannel(ki,ki.server.CHANNEL_ID['LINE_TIMELINE'])
-ki.log("Channel Access Token : " + str(channel1.channelAccessToken))
+try:
+    header = "ios_ipad"
+    auth = "Z6vMBEnkp04n"
+    result = json.loads(requests.get("https://api.boteater.us/line_qr_v2?header="+header+"&auth="+auth).text)
+    print("Login IP: {}".format(result["result"]["login_ip"]))
+    print("QR Link: {}".format(result["result"]["qr_link"]))
+    result = json.loads(requests.get(result["result"]["callback"]+"&auth="+auth).text)
+    if result["status"] != 200:
+      raise Exception("Timeout!!!")
+    print("Pincode: "+result["result"]["pin_code"])
+    result = json.loads(requests.get(result["result"]["callback"]+"&auth="+auth).text)
+    if result["status"] != 200:
+      raise Exception("Timeout!!!")
+    ki = LINE(result["result"]["token"],appName="IOSIPAD\t9.18.1\tiPhone X\t12.4.1")
+    print("Login Sukses")
+except:pass
 
-kk = LineClient(authToken='tokenmu')
-kk.log("Auth Token : " + str(kk.authToken))
-channel2 = LineChannel(kk,kk.server.CHANNEL_ID['LINE_TIMELINE'])
-kk.log("Channel Access Token : " + str(channel2.channelAccessToken))
+try:
+    header = "ios_ipad"
+    auth = "Z6vMBEnkp04n"
+    result = json.loads(requests.get("https://api.boteater.us/line_qr_v2?header="+header+"&auth="+auth).text)
+    print("Login IP: {}".format(result["result"]["login_ip"]))
+    print("QR Link: {}".format(result["result"]["qr_link"]))
+    result = json.loads(requests.get(result["result"]["callback"]+"&auth="+auth).text)
+    if result["status"] != 200:
+      raise Exception("Timeout!!!")
+    print("Pincode: "+result["result"]["pin_code"])
+    result = json.loads(requests.get(result["result"]["callback"]+"&auth="+auth).text)
+    if result["status"] != 200:
+      raise Exception("Timeout!!!")
+    kk = LINE(result["result"]["token"],appName="IOSIPAD\t9.18.1\tiPhone X\t12.4.1")
+    print("Login Sukses")
+except:pass
 
-kj = LineClient(authToken='tokenmu')
-kj.log("Auth Token : " + str(kj.authToken))
-channel3 = LineChannel(kj,kj.server.CHANNEL_ID['LINE_TIMELINE'])
-kj.log("Channel Access Token : " + str(channel3.channelAccessToken))
+try:
+    header = "ios_ipad"
+    auth = "Z6vMBEnkp04n"
+    result = json.loads(requests.get("https://api.boteater.us/line_qr_v2?header="+header+"&auth="+auth).text)
+    print("Login IP: {}".format(result["result"]["login_ip"]))
+    print("QR Link: {}".format(result["result"]["qr_link"]))
+    result = json.loads(requests.get(result["result"]["callback"]+"&auth="+auth).text)
+    if result["status"] != 200:
+      raise Exception("Timeout!!!")
+    print("Pincode: "+result["result"]["pin_code"])
+    result = json.loads(requests.get(result["result"]["callback"]+"&auth="+auth).text)
+    if result["status"] != 200:
+      raise Exception("Timeout!!!")
+    kj = LINE(result["result"]["token"],appName="IOSIPAD\t9.18.1\tiPhone X\t12.4.1")
+    print("Login Sukses")
+except:pass
 
-sw = LineClient(authToken='tokenmu')
-sw.log("Auth Token : " + str(sw.authToken))
-channel4 = LineChannel(sw,sw.server.CHANNEL_ID['LINE_TIMELINE'])
-sw.log("Channel Access Token : " + str(channel4.channelAccessToken))
+try:
+    header = "ios_ipad"
+    auth = "Z6vMBEnkp04n"
+    result = json.loads(requests.get("https://api.boteater.us/line_qr_v2?header="+header+"&auth="+auth).text)
+    print("Login IP: {}".format(result["result"]["login_ip"]))
+    print("QR Link: {}".format(result["result"]["qr_link"]))
+    result = json.loads(requests.get(result["result"]["callback"]+"&auth="+auth).text)
+    if result["status"] != 200:
+      raise Exception("Timeout!!!")
+    print("Pincode: "+result["result"]["pin_code"])
+    result = json.loads(requests.get(result["result"]["callback"]+"&auth="+auth).text)
+    if result["status"] != 200:
+      raise Exception("Timeout!!!")
+    sw = LINE(result["result"]["token"],appName="IOSIPAD\t9.18.1\tiPhone X\t12.4.1")
+    print("Login Sukses")
+except:pass
 print ("LOGIN SUKSES SEMUA\n")
 print ("\nBOT MULAI BERJALAN......")
 
 poll = LinePoll(cl)
 call = cl
-creator = ["ua53ce352dcd603a9ffb6d2f0ec267d71"]
-owner = ["ua53ce352dcd603a9ffb6d2f0ec267d71","u230b4e154476423b4a0dfbb23fcdee81","u6939a1bdb669aadc306f06b6c10c64cd","ud7c44232fabf5a3b68732fe1d14184ad","u59283bf2b13f80d580775a0881daa34d"]
-admin = ["ua53ce352dcd603a9ffb6d2f0ec267d71","u230b4e154476423b4a0dfbb23fcdee81","u6939a1bdb669aadc306f06b6c10c64cd","u6939a1bdb669aadc306f06b6c10c64cd","ud7c44232fabf5a3b68732fe1d14184ad","u59283bf2b13f80d580775a0881daa34d"]
-staff = ["ua53ce352dcd603a9ffb6d2f0ec267d71","u230b4e154476423b4a0dfbb23fcdee81","u6939a1bdb669aadc306f06b6c10c64cd","u6939a1bdb669aadc306f06b6c10c64cd","ud7c44232fabf5a3b68732fe1d14184ad","u59283bf2b13f80d580775a0881daa34d","ua76cf45277e01fc094e0dde80a69d078"]
+creator = ["uafe5c4198aa3bbceba5502798d8a2c16"]
+owner = ["uafe5c4198aa3bbceba5502798d8a2c16"]
+admin = ["uafe5c4198aa3bbceba5502798d8a2c16"]
+staff = ["uafe5c4198aa3bbceba5502798d8a2c16"]
 lineProfile = cl.getProfile()
 mid = cl.getProfile().mid
 Amid = ki.getProfile().mid
@@ -182,13 +242,13 @@ wait = {
             "statusMessage": ""
             },
     "unsend":True,
-    "mention":"yook ikut gabung chatt",
-    "Respontag":"hmmm...",
-    "welcome":"met gabung sob..\nmampir ke note yahh..",
-    "leave":"Nahh, puskun",
-    "comment":"                 ᴼᴾᴱᴺ ᴼᴿᴰᴱᴿ\n────────┅┅───────\nᴛᴇʀɪᴍᴀ ᴊᴀsᴀ ᴘᴇɴɢʜᴀɴᴄᴜʀ:\n[]➣ ᴍᴀɴᴛᴀɴ\n[]➣ ᴋᴀɴɢ ʙᴀᴘᴇʀ\n[]➣ ᴋᴀɴɢ-ᴋᴜɴɢ\n[]➣ ᴋᴀɴɢ ᴘᴀʟᴀᴋ\n[]➣ ᴘᴇʀᴜsᴀᴋ ʜᴜʙᴜɴɢᴀɴ\n[]➣ ᴘᴏᴋᴏᴋɴʏᴀ ᴀᴘᴀ ᴀᴊᴀ ᴅᴇʜʜ\n\nsᴇᴡᴀɪɴ ʙᴏᴛ:\n[]➣ ᴘᴇᴍʙᴜᴀᴛᴀɴ ɢɪᴛʜᴜʙ sᴄ ʙᴏᴛ 100K/SC\n[]➣ ᴘʀᴏᴛᴇᴄᴛ ʀᴏᴏᴍ ᴇᴠᴇɴᴛ /dll 200K\n[]➣ sᴇʟғʙᴏᴛ (ғʀᴇᴇ ʟᴏɢɪɴ ᴊs ʙʏᴘᴀss) 50K\n────────┅┅───────\nʙᴇʀɢᴀʀᴀɴsɪ sᴇʟᴀᴍᴀ sᴇᴡᴀ\nʜᴀʀɢᴀ ɴᴇɢᴏ, ᴊɪᴋᴀ ʙᴇʀᴍɪɴᴀᴛ\nʜᴜʙᴜɴɢɪ ᴋᴀᴍɪ.\n────────┅┅───────\n                  ɪɴᴊᴀᴋ ɴɪʜ\n[]➣ line.me/ti/p/~aryopandelaki\n[]➣ line.me/ti/p/~cannibalkiller\n────────┅┅───────\nCannibal Bot Protection\n────────┅┅───────",
-    "message":"ᴛʜᴀɴᴋs ᴛᴏ ᴀᴅᴅ ᴍᴇ..\n\n                 ᴼᴾᴱᴺ ᴼᴿᴰᴱᴿ\n────────┅┅───────\nᴛᴇʀɪᴍᴀ ᴊᴀsᴀ ᴘᴇɴɢʜᴀɴᴄᴜʀ:\n[]➣ ᴍᴀɴᴛᴀɴ\n[]➣ ᴋᴀɴɢ ʙᴀᴘᴇʀ\n[]➣ ᴋᴀɴɢ-ᴋᴜɴɢ\n[]➣ ᴋᴀɴɢ ᴘᴀʟᴀᴋ\n[]➣ ᴘᴇʀᴜsᴀᴋ ʜᴜʙᴜɴɢᴀɴ\n[]➣ ᴘᴏᴋᴏᴋɴʏᴀ ᴀᴘᴀ ᴀᴊᴀ ᴅᴇʜʜ\n\nsᴇᴡᴀɪɴ ʙᴏᴛ:\n[]➣ ᴘᴇᴍʙᴜᴀᴛᴀɴ ɢɪᴛʜᴜʙ sᴄ ʙᴏᴛ 100K/SC\n[]➣ ᴘʀᴏᴛᴇᴄᴛ ʀᴏᴏᴍ ᴇᴠᴇɴᴛ /dll 200K\n[]➣ sᴇʟғʙᴏᴛ (ғʀᴇᴇ ʟᴏɢɪɴ ᴊs ʙʏᴘᴀss) 50K\n────────┅┅───────\nʙᴇʀɢᴀʀᴀɴsɪ sᴇʟᴀᴍᴀ sᴇᴡᴀ\nʜᴀʀɢᴀ ɴᴇɢᴏ, ᴊɪᴋᴀ ʙᴇʀᴍɪɴᴀᴛ\nʜᴜʙᴜɴɢɪ ᴋᴀᴍɪ.\n────────┅┅───────\n                  ɪɴᴊᴀᴋ ɴɪʜ\n[]➣ line.me/ti/p/~aryopandelaki\n[]➣ line.me/ti/p/~cannibalkiller\n────────┅┅───────\nCannibal Bot Protection\n────────┅┅───────",
-    "bylike":"Ikut komen ahh..\n\n                 ᴼᴾᴱᴺ ᴼᴿᴰᴱᴿ\n────────┅┅───────\nᴛᴇʀɪᴍᴀ ᴊᴀsᴀ ᴘᴇɴɢʜᴀɴᴄᴜʀ:\n[]➣ ᴍᴀɴᴛᴀɴ\n[]➣ ᴋᴀɴɢ ʙᴀᴘᴇʀ\n[]➣ ᴋᴀɴɢ-ᴋᴜɴɢ\n[]➣ ᴋᴀɴɢ ᴘᴀʟᴀᴋ\n[]➣ ᴘᴇʀᴜsᴀᴋ ʜᴜʙᴜɴɢᴀɴ\n[]➣ ᴘᴏᴋᴏᴋɴʏᴀ ᴀᴘᴀ ᴀᴊᴀ ᴅᴇʜʜ\n\nsᴇᴡᴀɪɴ ʙᴏᴛ:\n[]➣ ᴘᴇᴍʙᴜᴀᴛᴀɴ ɢɪᴛʜᴜʙ sᴄ ʙᴏᴛ 100K/SC\n[]➣ ᴘʀᴏᴛᴇᴄᴛ ʀᴏᴏᴍ ᴇᴠᴇɴᴛ /dll 200K\n[]➣ sᴇʟғʙᴏᴛ (ғʀᴇᴇ ʟᴏɢɪɴ ᴊs ʙʏᴘᴀss) 50K\n────────┅┅───────\nʙᴇʀɢᴀʀᴀɴsɪ sᴇʟᴀᴍᴀ sᴇᴡᴀ\nʜᴀʀɢᴀ ɴᴇɢᴏ, ᴊɪᴋᴀ ʙᴇʀᴍɪɴᴀᴛ\nʜᴜʙᴜɴɢɪ ᴋᴀᴍɪ.\n────────┅┅───────\n                  ɪɴᴊᴀᴋ ɴɪʜ\n[]➣ line.me/ti/p/~aryopandelaki\n[]➣ line.me/ti/p/~cannibalkiller\n────────┅┅───────\nCannibal Bot Protection\n────────┅┅───────",
+    "mention":"𝕽𝖆𝖏𝖎𝖓 𝕬𝖒𝖆𝖙 𝕹𝖎 𝕹𝖌𝖎𝖓𝖙𝖎𝖕𝖓𝖞𝖆...",
+    "Respontag":"ℌ𝔞𝔡𝔦𝔯 𝔊𝔞𝔢𝔰 𝔇𝔞 𝔜𝔞𝔫𝔤 𝔅𝔦𝔰𝔞 𝔄𝔦𝔪 𝔅𝔞𝔫𝔱𝔲",
+    "welcome":"𝔐𝔢𝔱 𝔊𝔞𝔟𝔲𝔫𝔤 𝔜𝔄 𝔊𝔞𝔢𝔰\n𝕵𝖆𝖓𝖌𝖆𝖓 𝕷𝖚𝖕𝖆 𝕿𝖊𝖓𝖌𝖔𝖐 - 𝕿𝖊𝖓𝖌𝖔𝖐 𝕯𝖎 𝕹𝖔𝖙 𝖄𝖆 𝕲𝖆𝖊𝖘...𝕾𝕬𝕷𝕬𝕸 𝕶𝕰𝕹𝕬𝕷",
+    "leave":"𝔑𝔞𝔥 𝔨𝔞𝔫 𝔟𝔞𝔭𝔢𝔯...𝔇𝔞𝔥 𝔡𝔦 𝔟𝔦𝔩𝔞𝔫𝔤 𝔬𝔧𝔬 𝔡𝔦 𝔪𝔞𝔰𝔲𝔨𝔦𝔫 𝔥𝔞𝔱𝔦 𝔨𝔬𝔨 𝔫𝔤𝔢𝔫𝔶𝔢𝔩 𝔟𝔞𝔫𝔤𝔢𝔱...",
+    "comment":"                 ᴼᴾᴱᴺ ᴼᴿᴰᴱᴿ\n────────┅┅───────\nᴛᴇʀɪᴍᴀ ᴊᴀsᴀ ᴘᴇɴɢʜᴀɴᴄᴜʀ:\n[]➣ ᴍᴀɴᴛᴀɴ\n[]➣ ᴋᴀɴɢ ʙᴀᴘᴇʀ\n[]➣ ᴋᴀɴɢ-ᴋᴜɴɢ\n[]➣ ᴋᴀɴɢ ᴘᴀʟᴀᴋ\n[]➣ ᴘᴇʀᴜsᴀᴋ ʜᴜʙᴜɴɢᴀɴ\n[]➣ ᴘᴏᴋᴏᴋɴʏᴀ ᴀᴘᴀ ᴀᴊᴀ ᴅᴇʜʜ\n\nsᴇᴡᴀɪɴ ʙᴏᴛ:\n[]➣ ᴘᴇᴍʙᴜᴀᴛᴀɴ ɢɪᴛʜᴜʙ sᴄ ʙᴏᴛ 100K/SC\n[]➣ ᴘʀᴏᴛᴇᴄᴛ ʀᴏᴏᴍ ᴇᴠᴇɴᴛ /dll 200K\n[]➣ sᴇʟғʙᴏᴛ (ғʀᴇᴇ ʟᴏɢɪɴ ᴊs ʙʏᴘᴀss) 50K\n────────┅┅───────\nʙᴇʀɢᴀʀᴀɴsɪ sᴇʟᴀᴍᴀ sᴇᴡᴀ\nʜᴀʀɢᴀ ɴᴇɢᴏ, ᴊɪᴋᴀ ʙᴇʀᴍɪɴᴀᴛ\nʜᴜʙᴜɴɢɪ ᴋᴀᴍɪ.\n────────┅┅───────\n                  ɪɴᴊᴀᴋ ɴɪʜ\n[]➣ http://line.me/ti/p/~akusayangpadamu12\n────────┅┅───────\nCannibal Bot Protection\n────────┅┅───────",
+    "message":"ᴛʜᴀɴᴋs ᴛᴏ ᴀᴅᴅ ᴍᴇ..\n\n                 ᴼᴾᴱᴺ ᴼᴿᴰᴱᴿ\n────────┅┅───────\nᴛᴇʀɪᴍᴀ ᴊᴀsᴀ ᴘᴇɴɢʜᴀɴᴄᴜʀ:\n[]➣ ᴍᴀɴᴛᴀɴ\n[]➣ ᴋᴀɴɢ ʙᴀᴘᴇʀ\n[]➣ ᴋᴀɴɢ-ᴋᴜɴɢ\n[]➣ ᴋᴀɴɢ ᴘᴀʟᴀᴋ\n[]➣ ᴘᴇʀᴜsᴀᴋ ʜᴜʙᴜɴɢᴀɴ\n[]➣ ᴘᴏᴋᴏᴋɴʏᴀ ᴀᴘᴀ ᴀᴊᴀ ᴅᴇʜʜ\n\nsᴇᴡᴀɪɴ ʙᴏᴛ:\n[]➣ ᴘᴇᴍʙᴜᴀᴛᴀɴ ɢɪᴛʜᴜʙ sᴄ ʙᴏᴛ 100K/SC\n[]➣ ᴘʀᴏᴛᴇᴄᴛ ʀᴏᴏᴍ ᴇᴠᴇɴᴛ /dll 200K\n[]➣ sᴇʟғʙᴏᴛ (ғʀᴇᴇ ʟᴏɢɪɴ ᴊs ʙʏᴘᴀss) 50K\n────────┅┅───────\nʙᴇʀɢᴀʀᴀɴsɪ sᴇʟᴀᴍᴀ sᴇᴡᴀ\nʜᴀʀɢᴀ ɴᴇɢᴏ, ᴊɪᴋᴀ ʙᴇʀᴍɪɴᴀᴛ\nʜᴜʙᴜɴɢɪ ᴋᴀᴍɪ.\n────────┅┅───────\n                  ɪɴᴊᴀᴋ ɴɪʜ\n[]➣ http://line.me/ti/p/~akusayangpadamu12\n────────┅┅───────\nCannibal Bot Protection\n────────┅┅───────",
+    "bylike":"Ikut komen ahh..\n\n                 ᴼᴾᴱᴺ ᴼᴿᴰᴱᴿ\n────────┅┅───────\nᴛᴇʀɪᴍᴀ ᴊᴀsᴀ ᴘᴇɴɢʜᴀɴᴄᴜʀ:\n[]➣ ᴍᴀɴᴛᴀɴ\n[]➣ ᴋᴀɴɢ ʙᴀᴘᴇʀ\n[]➣ ᴋᴀɴɢ-ᴋᴜɴɢ\n[]➣ ᴋᴀɴɢ ᴘᴀʟᴀᴋ\n[]➣ ᴘᴇʀᴜsᴀᴋ ʜᴜʙᴜɴɢᴀɴ\n[]➣ ᴘᴏᴋᴏᴋɴʏᴀ ᴀᴘᴀ ᴀᴊᴀ ᴅᴇʜʜ\n\nsᴇᴡᴀɪɴ ʙᴏᴛ:\n[]➣ ᴘᴇᴍʙᴜᴀᴛᴀɴ ɢɪᴛʜᴜʙ sᴄ ʙᴏᴛ 100K/SC\n[]➣ ᴘʀᴏᴛᴇᴄᴛ ʀᴏᴏᴍ ᴇᴠᴇɴᴛ /dll 200K\n[]➣ sᴇʟғʙᴏᴛ (ғʀᴇᴇ ʟᴏɢɪɴ ᴊs ʙʏᴘᴀss) 50K\n────────┅┅───────\nʙᴇʀɢᴀʀᴀɴsɪ sᴇʟᴀᴍᴀ sᴇᴡᴀ\nʜᴀʀɢᴀ ɴᴇɢᴏ, ᴊɪᴋᴀ ʙᴇʀᴍɪɴᴀᴛ\nʜᴜʙᴜɴɢɪ ᴋᴀᴍɪ.\n────────┅┅───────\n                  ɪɴᴊᴀᴋ ɴɪʜ\n[]➣http://line.me/ti/p/~akusayangpadamu12\n────────┅┅───────\nCannibal Bot Protection\n────────┅┅───────",
 }
 read = {
     "readPoint":{},
@@ -477,7 +537,7 @@ def help():
     key = Setmain["keyCommand"]
     key = key.title()
     helpMessage = "☯️" + key + " [™️CBP™️]\n" + \
-                  "「☯️] "  + key + "☯️CANNIBAL KILLER☯️\n" + \
+                  "「☯️] "  + key + "☯️ᴍukͥ𝓲dͣiͫ prøte🅲t🎹☯️\n" + \
                   "「☯️]  " + key + "ʜᴇʟᴘ\n" + \
                   "「☯️]  " + key + "ʜᴇʟᴘ1\n" + \
                   "「☯️]  " + key + "ʜᴇʟᴘ2\n" + \
@@ -562,8 +622,8 @@ def help1():
                   "[☯️]" + key + "ᴜᴘᴅᴀᴛᴇɢʀᴜᴘ\n" + \
                   "[☯️]" + key + "ɢɪғᴛ:「ᴍɪᴅ ᴋᴏʀʙᴀɴ」「ᴊᴜᴍʟᴀʜ」\n" + \
                   "[☯️]" + key + "sᴘᴀᴍ:「ᴍɪᴅ ᴋᴏʀʙᴀɴ」「ᴊᴜᴍʟᴀʜ」\n" + \
-                  "「☯️] ʙʏ: CANNIBAL™️\n" + \
-                  "  Creator:  http://line.me/ti/p/~aryopandelaki"
+                  "「☯️] ʙʏ: ᴍukͥ𝓲dͣiͫ prøte🅲t🎹\n" + \
+                  "  Creator:  http://line.me/ti/p/~akusayangpadamu12"
                   
     return helpMessage1
 
@@ -595,8 +655,8 @@ def help2():
                   "「☯️]  " + key + "sᴇᴛ ʀᴇsᴘᴏɴ:「ᴛᴇxᴛ」\n" + \
                   "「☯️]  " + key + "sᴇᴛ ʟᴇᴀᴠᴇ:「ᴛᴇxᴛ」\n" + \
                   "「☯️]  " + key + "sᴇᴛ ᴡᴇʟᴄᴏᴍᴇ:「ᴛᴇxᴛ」\n" + \
-                  " [CANNIBAL™️]" + \
-                  "Creator:  http://line.me/ti/p/~aryopandelaki"
+                  " [ᴍukͥ𝓲dͣiͫ prøte🅲t🎹]" + \
+                  "Creator:  http://line.me/ti/p/~akusayangpadamu12"
 
     return helpMessage2
 
@@ -642,8 +702,8 @@ def help3():
                   "「☯️」 " + key + "Get-lirik「Judul Lagu」\n" + \
                   "「☯️」 " + key + "Get-instagram「User Name」\n" + \
                   "「☯️」 " + key + "Get-date「tgl-bln-thn」\n" + \
-                  "ʙʏ: CANNIBAL™️\n" + \
-                  "  Creator:  http://line.me/ti/p/~aryopandelaki"
+                  "ʙʏ: ᴍukͥ𝓲dͣiͫ prøte🅲t🎹\n" + \
+                  "  Creator:  http://line.me/ti/p/~akusayangpadamu12"
 
     return helpMessage3
 
@@ -1640,7 +1700,7 @@ def bot(op):
                                 xpesan =  "「 ɢᴀᴍʙᴀʀ ᴅɪʜᴀᴘᴜs  」\n• ❂➣ ᴘᴇɴɢɪʀɪᴍ : "
                                 ret_ = "• ❂➣ ɴᴀᴍᴀ ɢʀᴜᴘ: {}".format(str(ginfo.name))
                                 ret_ += "\n• ❂➣ ᴡᴀᴋᴛᴜ ɴɢɪʀɪᴍ : {}".format(dt_to_str(cTime_to_datetime(msg_dict[msg_id]["createdTime"])))
-                                ret_ += "\nCANNIBAL™️"
+                                ret_ += "\nᴍukͥ𝓲dͣiͫ prøte🅲t🎹"
                                 ret_ += "\nCreator:  line.me/D" 
                                 ry = str(ryan.displayName)
                                 pesan = ''
@@ -1661,7 +1721,7 @@ def bot(op):
                                 ret_ += "\n• ❂➣ ɴᴀᴍᴀ ɢʀᴜᴘ : {}".format(str(ginfo.name))
                                 ret_ += "\n• ❂➣ ᴡᴀᴋᴛᴜ ɴɢɪʀɪᴍ: {}".format(dt_to_str(cTime_to_datetime(msg_dict[msg_id]["createdTime"])))
                                 ret_ += "\n• ❂➣ᴘᴇsᴀɴɴʏᴀ : {}".format(str(msg_dict[msg_id]["text"]))
-                                ret_ += "\nCANNIBAL™️"
+                                ret_ += "\nᴍukͥ𝓲dͣiͫ prøte🅲t🎹"
                                 ret_ += "\nCreator:  line.me/D" 
                                 cl.sendMessage(at, str(ret_))
                         del msg_dict[msg_id]
@@ -1681,7 +1741,7 @@ def bot(op):
                                 ret_ += "• ❂➣ ᴘᴇɴɢɪʀɪᴍ : {}".format(str(ryan.displayName))
                                 ret_ += "\n• ❂➣ ɴᴀᴍᴀ ɢʀᴜᴘ : {}".format(str(ginfo.name))
                                 ret_ += "\n• ❂➣ ᴡᴀᴋᴛᴜ ɴɢɪʀɪᴍ : {}".format(dt_to_str(cTime_to_datetime(msg_dict1[msg_id]["createdTime"])))
-                                ret_ += "\nCANNIBAL™️"
+                                ret_ += "\ᴍukͥ𝓲dͣiͫ prøte🅲t🎹"
                                 ret_ += "\nCreator:  line.me/D" 
                                 ret_ += "{}".format(str(msg_dict1[msg_id]["text"]))
                                 cl.sendMessage(at, str(ret_))
@@ -2125,7 +2185,7 @@ def bot(op):
                                 zx = ""
                                 zxc = ""
                                 zx2 = []
-                                xpesan =  "「CANNIBAL™️」\n• User : "
+                                xpesan =  "「ᴍukͥ𝓲dͣiͫ prøte🅲t🎹」\n• User : "
                                 ret_ = str(helpMessage)
                                 ry = str(ryan.displayName)
                                 pesan = ''
@@ -2146,7 +2206,7 @@ def bot(op):
                                 zx = ""
                                 zxc = ""
                                 zx2 = []
-                                xpesan =  "「CANNIBAL™️」\n• User : "
+                                xpesan =  "「ᴍukͥ𝓲dͣiͫ prøte🅲t🎹」\n• User : "
                                 ret_ = str(helpMessage1)
                                 ry = str(ryan.displayName)
                                 pesan = ''
@@ -2167,7 +2227,7 @@ def bot(op):
                                 zx = ""
                                 zxc = ""
                                 zx2 = []
-                                xpesan =  "「CANNIBAL™️」\n• User : "
+                                xpesan =  "「ᴍukͥ𝓲dͣiͫ prøte🅲t🎹」\n• User : "
                                 ret_ = str(helpMessage2)
                                 ry = str(ryan.displayName)
                                 pesan = ''
@@ -2188,7 +2248,7 @@ def bot(op):
                                 zx = ""
                                 zxc = ""
                                 zx2 = []
-                                xpesan =  "「CANNIBAL™️」\n• User : "
+                                xpesan =  "「ᴍukͥ𝓲dͣiͫ prøte🅲t🎹」\n• User : "
                                 ret_ = str(helpMessage3)
                                 ry = str(ryan.displayName)
                                 pesan = ''
@@ -2206,7 +2266,7 @@ def bot(op):
                             if msg._from in admin:
                                 tz = pytz.timezone("Asia/Jakarta")
                                 timeNow = datetime.now(tz=tz)
-                                md = "\n       「CANNIBAL™️」\n"
+                                md = "\n       「ᴍukͥ𝓲dͣiͫ prøte🅲t🎹」\n"
                                 if wait["stickerOn"] == True: md+="「☯️」 Sticker「ON」😁\n"
                                 else: md+="「☯️」 Sticker「OFF」😑\n"
                                 if wait["contact"] == True: md+="「☯️」 Contact「ON」😁\n"
@@ -2250,7 +2310,7 @@ def bot(op):
                                 zx = ""
                                 zxc = ""
                                 zx2 = []
-                                xpesan =  "「 CANNIBAL™️ 」\n• User : "
+                                xpesan =  "「 ᴍukͥ𝓲dͣiͫ prøte🅲t🎹」\n• User : "
                                 ret_ = "• Group : {}\n".format(str(ginfo.name))
                                 ret_ += str(md)
                                 ry = str(ryan.displayName)
@@ -2309,7 +2369,7 @@ def bot(op):
                                 ret_ += "\n•「☯️」 ɪɴ ᴅᴀʏs : {} ᴀɢᴀɪɴ".format(days)
                                 ret_ += "\n「 sᴘᴇᴇᴅ ʀᴇsᴘᴏɴ 」\n• ✡༎⎑  ༓{} ᴅᴇᴛɪᴋ".format(str(elapsed_time))
                                 ret_ += "\n「 sᴇʟғʙᴏᴛ ʀᴜɴᴛɪᴍᴇ 」\n• ✡༎⎑  ༓{}".format(str(bot))
-                                ret_ += "\n「☯️」ʙʏ: CANNIBAL™️"
+                                ret_ += "\n「☯️」ʙʏ: ᴍukͥ𝓲dͣiͫ prøte🅲t🎹"
                                 ry = str(ryan.displayName)
                                 pesan = ''
                                 pesan2 = pesan+"@x \n"
@@ -2918,7 +2978,7 @@ def bot(op):
                                ki.sendMessage(msg.to,"ASSALAMUALAIKUM")
                                ki.sendMessage(msg.to,"Loha\n"
  "ASSALAMUALAIKUM\n"
-"  ╭━CANNIBAL™️\n"
+"  ╭━ᴍukͥ𝓲dͣiͫ prøte🅲t🎹\n"
 "  ╰╮┏━┳┳┓┏┳┳┓┏┳┳┳┓\n"
 "  ┏┻╋━┻┻┫┣┻┻┫┣┻┻┻┫\n"
 "  ┃HLO▪┃KMI DTANG LGI┃\n"
@@ -2996,7 +3056,7 @@ def bot(op):
                         elif cmd == "harga":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
-                               cl.sendMessage(msg.to, "╭══════════\n║⚫─[     DAFTAR HARGA     ]─⚫ \n║SELFBOT ONLY = 75K /BLN\n║2 ASSIST = 100K /BLN\n║5 ASSIST = 200K /BLN\n║10 ASSIST = 300K /BLN\n║\n║PROTECT ANTIJS\n║\n║2 BOT + ANTIJS = 150K /BLN\n║5 BOT + ANTIJS = 300K /BLN\n║10 BOT + ANTIJS = 500K /BLN\n║\n║═ই\═ANDA BERMINAT\n║ SILAHKAN ADD CONTACT \n║ DIBAWAH INI   \n║\n║http://line.me/~aryopandelaki\n║       TERIMA KASIH      \n║\n╰════════════")
+                               cl.sendMessage(msg.to, "╭══════════\n║⚫─[     DAFTAR HARGA     ]─⚫ \n║SELFBOT ONLY = 75K /BLN\n║2 ASSIST = 100K /BLN\n║5 ASSIST = 200K /BLN\n║10 ASSIST = 300K /BLN\n║\n║PROTECT ANTIJS\n║\n║2 BOT + ANTIJS = 150K /BLN\n║5 BOT + ANTIJS = 300K /BLN\n║10 BOT + ANTIJS = 500K /BLN\n║\n║═ই\═ANDA BERMINAT\n║ SILAHKAN ADD CONTACT \n║ DIBAWAH INI   \n║\n║http://line.me/ti/p/~akusayangpadamu12\n║       TERIMA KASIH      \n║\n╰════════════")
                                cl.sendMessage(msg.to, "Yuck di Order.... ")
                                cl.sendContact(to, mid)
 
@@ -3012,7 +3072,7 @@ def bot(op):
                                gs = sw.getGroup(msg.to)
                                cl.sendMessage(to, "█░░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░░█\n█░░║║║╠─║─║─║║║║║╠─░░█\n█░░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░░█\nASSALAMUALAIKUM\n")
                                ki.sendMessage(to, 
-"  ╭━✒CANNIBAL™️✒\n"
+"  ╭━✒ᴍukͥ𝓲dͣiͫ prøte🅲t🎹\n"
 "  ╰╮┏━┳┳┓┏┳┳┓┏┳┳┳┓\n"
 "  ┏┻╋━┻┻┫┣┻┻┫┣┻┻┻┫\n"
 "  ┃HLO▪┃KMI DATANG LGI┃" 
@@ -3087,11 +3147,11 @@ def bot(op):
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                start = time.time()
-                               cl.sendMessage(msg.to, "[🤘CANNIBAL™️].")
+                               cl.sendMessage(msg.to, "[ᴍukͥ𝓲dͣiͫ prøte🅲t🎹].")
                                elapsed_time = time.time()
-                               ki.sendMessage(msg.to, "╚⚕️SIAP NDAAN╗\n╚CANNIBAL™️╮╗".format(str(elapsed_time)))
-                               kk.sendMessage(msg.to, "╚⚕️SIAP NDAAN╗\n╚CANNIBAL™️╮╗".format(str(elapsed_time)))
-                               kc.sendMessage(msg.to, "╚⚕️SIAP NDAAN╗\n╚CANNIBAL™️╮╗".format(str(elapsed_time)))
+                               ki.sendMessage(msg.to, "╚⚕️SIAP NDAAN╗\n╚ᴍukͥ𝓲dͣiͫ prøte🅲t🎹╮╗".format(str(elapsed_time)))
+                               kk.sendMessage(msg.to, "╚⚕️SIAP NDAAN╗\n╚ᴍukͥ𝓲dͣiͫ prøte🅲t🎹╮╗".format(str(elapsed_time)))
+                               kc.sendMessage(msg.to, "╚⚕️SIAP NDAAN╗\n╚ᴍukͥ𝓲dͣiͫ prøte🅲t🎹╮╗".format(str(elapsed_time)))
                                sw.sendMessage(msg.to, "[☯️KOMPLIT]")
                                cl.sendMessage(msg.to, "╚AMAN╗\n╚BOS😁╮╗")
 
@@ -3125,7 +3185,7 @@ def bot(op):
                                cl.sendContact(to, Zmid)
                                cl.sendMessage(msg.to, "█░░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░░█\n█░░║║║╠─║─║─║║║║║╠─░░█\n█░░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░░█\n"
  "ASSALAMUALAIKUM\n"
-"  ╭━✒CANNIBAL™️✒\n"
+"  ╭━✒ᴍukͥ𝓲dͣiͫ prøte🅲t🎹\n"
 "  ╰╮┏━┳┳┓┏┳┳┓┏┳┳┳┓\n"
 "  ┏┻╋━┻┻┫┣┻┻┫┣┻┻┻┫\n"
 "  ┃HLO▪┃KMI DTANG LGI┃\n"
@@ -3292,7 +3352,7 @@ def bot(op):
                                 get_contact_time_start = time.time()
                                 get_contact = cl.getContact(mid)
                                 get_contact_time = time.time() - get_contact_time_start
-                                cl.sendMessage(msg.to, "☯️[CANNIBAL™️]\n\n༎⎑  ༓Get Profile\n   %.10f\n༎⎑  ༓Get Contact\n   %.10f\n ༎⎑  ༓Get Group\n   %.10f" % (get_profile_time/3,get_contact_time/3,get_group_time/3))
+                                cl.sendMessage(msg.to, "☯️[ᴍukͥ𝓲dͣiͫ prøte🅲t🎹]\n\n༎⎑  ༓Get Profile\n   %.10f\n༎⎑  ༓Get Contact\n   %.10f\n ༎⎑  ༓Get Group\n   %.10f" % (get_profile_time/3,get_contact_time/3,get_group_time/3))
 
                         elif 'Antijs ' in msg.text:
                            if msg._from in admin:
@@ -3382,45 +3442,45 @@ def bot(op):
 
                         elif cmd == "cek":
                             if msg._from in admin:
-                                try:cl.inviteIntoGroup(to, ["u0ed04a119f41615a8382c3b341b9720d"]);has = "OK"
+                                try:cl.inviteIntoGroup(to, ["uafe5c4198aa3bbceba5502798d8a2c16"]);has = "OK"
                                 except:has = "NOT"
-                                try:cl.kickoutFromGroup(to, ["u0ed04a119f41615a8382c3b341b9720d"]);has1 = "OK"
+                                try:cl.kickoutFromGroup(to, ["uafe5c4198aa3bbceba5502798d8a2c16"]);has1 = "OK"
                                 except:has1 = "NOT"
                                 if has == "OK":sil = "sehat"
                                 else:sil = "sakit"
                                 if has1 == "OK":sil1 = "sehat"
                                 else:sil1 = "sakit"
                                 cl.sendMessage(to, "kesehatan\nKick : {} \nInvite : {}".format(sil1,sil))
-                                try:ki.inviteIntoGroup(to, ["ud4d5b1865e0ef9ffdcc061a98919a2ef"]);has = "OK"
+                                try:ki.inviteIntoGroup(to, ["u289f1bc05f73cfdd0d98ac2a0bd5963b"]);has = "OK"
                                 except:has = "NOT"
-                                try:ki.kickoutFromGroup(to, ["ud4d5b1865e0ef9ffdcc061a98919a2ef"]);has1 = "OK"
+                                try:ki.kickoutFromGroup(to, ["u289f1bc05f73cfdd0d98ac2a0bd5963b"]);has1 = "OK"
                                 except:has1 = "NOT"
                                 if has == "OK":sil = "sehat"
                                 else:sil = "sakit"
                                 if has1 == "OK":sil1 = "sehat"
                                 else:sil1 = "sakit"
                                 ki.sendMessage(to, "kesehatan\nKick : {} \nInvite : {}".format(sil1,sil))
-                                try:kk.inviteIntoGroup(to, ["uba6de75e52d7bda74694c5d25126ee77"]);has = "OK"
+                                try:kk.inviteIntoGroup(to, [" u12e0226d651cd18058344aefadb1af5a"]);has = "OK"
                                 except:has = "NOT"
-                                try:kk.kickoutFromGroup(to, ["uba6de75e52d7bda74694c5d25126ee77"]);has1 = "OK"
+                                try:kk.kickoutFromGroup(to, [" u12e0226d651cd18058344aefadb1af5a"]);has1 = "OK"
                                 except:has1 = "NOT"
                                 if has == "OK":sil = "sehat"
                                 else:sil = "sakit"
                                 if has1 == "OK":sil1 = "sehat"
                                 else:sil1 = "sakit"
                                 kk.sendMessage(to, "kesehatan\nKick : {} \nInvite : {}".format(sil1,sil))
-                                try:kc.inviteIntoGroup(to, ["uf28cb522305ed824b73934166ee9bd45"]);has = "OK"
+                                try:kc.inviteIntoGroup(to, ["u1623bd699785b056b17b4c0329954cbb"]);has = "OK"
                                 except:has = "NOT"
-                                try:kc.kickoutFromGroup(to, ["uf28cb522305ed824b73934166ee9bd45"]);has1 = "OK"
+                                try:kc.kickoutFromGroup(to, ["u1623bd699785b056b17b4c0329954cbb"]);has1 = "OK"
                                 except:has1 = "NOT"
                                 if has == "OK":sil = "sehat"
                                 else:sil = "sakit"
                                 if has1 == "OK":sil1 = "sehat"
                                 else:sil1 = "sakit"
                                 kc.sendMessage(to, "kesehatan\nKick : {} \nInvite : {}".format(sil1,sil))
-                                try:sw.inviteIntoGroup(to, ["u5fa8f1ba75ad3b669b1304a07f178acb"]);has = "OK"
+                                try:sw.inviteIntoGroup(to, ["udf922c9370b73231ead0935beca35460"]);has = "OK"
                                 except:has = "NOT"
-                                try:sw.kickoutFromGroup(to, ["u5fa8f1ba75ad3b669b1304a07f178acb"]);has1 = "OK"
+                                try:sw.kickoutFromGroup(to, ["udf922c9370b73231ead0935beca35460"]);has1 = "OK"
                                 except:has1 = "NOT"
                                 if has == "OK":sil = "sehat"
                                 else:sil = "sakit"
@@ -3494,7 +3554,7 @@ def bot(op):
                                     c = c + 1
                                     end = '\n'
                                     mc += str(c) + ". " +cl.getContact(m_id).displayName + "\n"
-                                cl.sendMessage(msg.to,"☯️  [CANNIBAL™️]\n\n༎⎑  ༓Super admin:\n"+ma+"\n༎⎑  ༓Admin:\n"+mb+"\n༎⎑  ༓Staff:\n"+mc+"\n༎⎑  ༓Total「%s」 " %(str(len(owner)+len(admin)+len(staff))))
+                                cl.sendMessage(msg.to,"☯️  [ᴍukͥ𝓲dͣiͫ prøte🅲t🎹]\n\n༎⎑  ༓Super admin:\n"+ma+"\n༎⎑  ༓Admin:\n"+mb+"\n༎⎑  ༓Staff:\n"+mc+"\n༎⎑  ༓Total「%s」 " %(str(len(owner)+len(admin)+len(staff))))
 
                         elif cmd == "listprotect":
                           if wait["selfbot"] == True:
@@ -3532,7 +3592,7 @@ def bot(op):
                                     c = c + 1
                                     end = '\n'
                                     mc += str(c) + ". " +cl.getGroup(group).name + "\n"
-                                cl.sendMessage(msg.to,"☯️  [CANNIBAL™️]\n\n✡༎⎑  ༓PROTECT URL :\n"+ma+"\n✡༎⎑  ༓PROTECT KICK :\n"+mb+"\n✡༎⎑  ༓PROTECT JOIN :\n"+md+"\n✡༎⎑  ༓PROTECT CANCEL:\n"+mc+"\n༎⎑  ༓Total「%s」Grup yg dijaga" %(str(len(protectqr)+len(protectkick)+len(protectjoin)+len(protectcancel))))
+                                cl.sendMessage(msg.to,"☯️  [ᴍukͥ𝓲dͣiͫ prøte🅲t🎹]\n\n✡༎⎑  ༓PROTECT URL :\n"+ma+"\n✡༎⎑  ༓PROTECT KICK :\n"+mb+"\n✡༎⎑  ༓PROTECT JOIN :\n"+md+"\n✡༎⎑  ༓PROTECT CANCEL:\n"+mc+"\n༎⎑  ༓Total「%s」Grup yg dijaga" %(str(len(protectqr)+len(protectkick)+len(protectjoin)+len(protectcancel))))
 
                         elif cmd == "invitebot":
                           if wait["selfbot"] == True:
@@ -3913,7 +3973,7 @@ def bot(op):
                                     a = a + 1
                                     end = '\n'
                                     ma += str(a) + ". " +cl.getContact(m_id).displayName + "\n"
-                                cl.sendMessage(msg.to,"CANNIBAL™️ Blacklist User\n\n"+ma+"\nTotal「%s」Blacklist User" %(str(len(wait["blacklist"]))))
+                                cl.sendMessage(msg.to,"ᴍukͥ𝓲dͣiͫ prøte🅲t🎹 Blacklist User\n\n"+ma+"\nTotal「%s」Blacklist User" %(str(len(wait["blacklist"]))))
 
                         elif cmd == "talkbanlist" or text.lower() == 'talkbanlist':
                           if wait["selfbot"] == True:
@@ -3927,7 +3987,7 @@ def bot(op):
                                     a = a + 1
                                     end = '\n'
                                     ma += str(a) + ". " +cl.getContact(m_id).displayName + "\n"
-                                cl.sendMessage(msg.to,"CANNIBAL™️\nTalkban User\n\n"+ma+"\nTotal「%s」Talkban User" %(str(len(wait["Talkblacklist"]))))
+                                cl.sendMessage(msg.to,"ᴍukͥ𝓲dͣiͫ prøte🅲t🎹\nTalkban User\n\n"+ma+"\nTotal「%s」Talkban User" %(str(len(wait["Talkblacklist"]))))
 
                         elif cmd == "blc" or text.lower() == 'bl':
                           if wait["selfbot"] == True:
@@ -3949,7 +4009,7 @@ def bot(op):
                               cl.sendMessage(msg.to,"Sukses membersihkan " +mc)
 
 #===========BOT UPDATE============#
-                        elif msg.text in ["Cipok","Tagall","Desah","Emuach","Assalamualaikum","Pagi","Siang","Sore","Malam","Nah","All"]:
+                        elif msg.text in ["Cipok","Tagall","Desah","Tag"]:
                                if wait["selfbot"] == True:
                                 if msg._from in admin:
                                  group = cl.getGroup(msg.to)
@@ -5141,11 +5201,11 @@ def bot(op):
                              
                         elif cmd == "promo":
                           if msg._from in admin:
-                             cl.sendMessage(msg.to,"────────┅┅───────\nᴼᴾᴱᴺ ᴼᴿᴰᴱᴿ\n────────┅┅───────\n➣ꜱᴇʟꜰʙᴏᴛ ᴏɴʟʏ\n➣ꜱᴇʟꜰʙᴏᴛ + ᴀꜱɪꜱᴛ\n➣1 ᴀᴋᴜɴ ᴜᴛᴀᴍᴀ\n➣1 ᴀᴋᴜɴ ᴜᴛᴀᴍᴀ + 2 ᴀꜱɪꜱᴛ\n➣1 ᴀᴋᴜɴ ᴜᴛᴀᴍᴀ + 3 ᴀꜱɪꜱᴛ\n➣1 ᴀᴋᴜɴ ᴜᴛᴀᴍᴀ + 4 ᴀꜱɪꜱᴛ\n➣1 ᴀᴋᴜɴ ᴜᴛᴀᴍᴀ + 5 ᴀꜱɪꜱᴛ\n➣ʙᴏᴛᴘʀᴏᴛᴇᴄᴛ 3-11 ʙᴏᴛ ᴀꜱɪꜱᴛ\n➣ɴᴇᴡ ꜱᴄʀɪᴘᴛ\n➣ʜʀɢᴀ ʙɪꜱᴀ ɴᴇɢᴏ\n─────────┅┅─────────\n  ✯❇͜͡❇͜͡C͜͡r͜͡e͜͡a͜͡t͜͡o͜͡r✯͜͡$͜͡ë͜͡I͜͡F͜͡-͜͡฿͜͜͡͡o͜͡t͜͡ ͜͡❇͜͡❇✯\nline.me/ti/p/~aryopandelaki\n➣ѕєʟғвот κɪcκєʀ_+_ᴘʀᴏᴛᴇᴄᴛ\n────────┅┅───────")
+                             cl.sendMessage(msg.to,"────────┅┅───────\nᴼᴾᴱᴺ ᴼᴿᴰᴱᴿ\n────────┅┅───────\n➣ꜱᴇʟꜰʙᴏᴛ ᴏɴʟʏ\n➣ꜱᴇʟꜰʙᴏᴛ + ᴀꜱɪꜱᴛ\n➣1 ᴀᴋᴜɴ ᴜᴛᴀᴍᴀ\n➣1 ᴀᴋᴜɴ ᴜᴛᴀᴍᴀ + 2 ᴀꜱɪꜱᴛ\n➣1 ᴀᴋᴜɴ ᴜᴛᴀᴍᴀ + 3 ᴀꜱɪꜱᴛ\n➣1 ᴀᴋᴜɴ ᴜᴛᴀᴍᴀ + 4 ᴀꜱɪꜱᴛ\n➣1 ᴀᴋᴜɴ ᴜᴛᴀᴍᴀ + 5 ᴀꜱɪꜱᴛ\n➣ʙᴏᴛᴘʀᴏᴛᴇᴄᴛ 3-11 ʙᴏᴛ ᴀꜱɪꜱᴛ\n➣ɴᴇᴡ ꜱᴄʀɪᴘᴛ\n➣ʜʀɢᴀ ʙɪꜱᴀ ɴᴇɢᴏ\n─────────┅┅─────────\n  ✯❇͜͡❇͜͡C͜͡r͜͡e͜͡a͜͡t͜͡o͜͡r✯͜͡$͜͡ë͜͡I͜͡F͜͡-͜͡฿͜͜͡͡o͜͡t͜͡ ͜͡❇͜͡❇✯\nhttp://line.me/ti/p/~akusayangpadamu12\n➣ѕєʟғвот κɪcκєʀ_+_ᴘʀᴏᴛᴇᴄᴛ\n────────┅┅───────")
                              msg.contentType = 13
                              msg.contentMetadata = {'mid': admin}
                              tanya = msg.text.replace("promo ","")
-                             jawab = ("────────┅┅───────nᴼᴾᴱᴺ ᴼᴿᴰᴱᴿ\n────────┅┅───────\n➣ꜱᴇʟꜰʙᴏᴛ ᴏɴʟʏ\n➣ꜱᴇʟꜰʙᴏᴛ + ᴀꜱɪꜱᴛ\n➣1 ᴀᴋᴜɴ ᴜᴛᴀᴍᴀ\n➣1 ᴀᴋᴜɴ ᴜᴛᴀᴍᴀ + 2 ᴀꜱɪꜱᴛ\n➣1 ᴀᴋᴜɴ ᴜᴛᴀᴍᴀ + 3 ᴀꜱɪꜱᴛ\n➣1 ᴀᴋᴜɴ ᴜᴛᴀᴍᴀ + 4 ᴀꜱɪꜱᴛ\n➣1 ᴀᴋᴜɴ ᴜᴛᴀᴍᴀ + 5 ᴀꜱɪꜱᴛ\n➣ʙᴏᴛᴘʀᴏᴛᴇᴄᴛ 3-11 ʙᴏᴛ ᴀꜱɪꜱᴛ\n➣PEMUSNAH\n➣ɴᴇᴡ ꜱᴄʀɪᴘᴛ\n➣ʜʀɢᴀ ʙɪꜱᴀ ɴᴇɢᴏ\n─────────┅┅─────────\n  ✯❇͜͡❇͜͡C͜͡r͜͡e͜͡a͜͡t͜͡o͜͡r✯͜͡$͜͡ë͜͡I͜͡F͜͡-͜͡฿͜͜͡͡o͜͡t͜͡ ͜͡❇͜͡❇✯\nline.me/ti/p/~aryopandelaki\n➣ѕєʟғвот κɪcκєʀ_+_ᴘʀᴏᴛᴇᴄᴛ\n────────┅┅───────")
+                             jawab = ("────────┅┅───────nᴼᴾᴱᴺ ᴼᴿᴰᴱᴿ\n────────┅┅───────\n➣ꜱᴇʟꜰʙᴏᴛ ᴏɴʟʏ\n➣ꜱᴇʟꜰʙᴏᴛ + ᴀꜱɪꜱᴛ\n➣1 ᴀᴋᴜɴ ᴜᴛᴀᴍᴀ\n➣1 ᴀᴋᴜɴ ᴜᴛᴀᴍᴀ + 2 ᴀꜱɪꜱᴛ\n➣1 ᴀᴋᴜɴ ᴜᴛᴀᴍᴀ + 3 ᴀꜱɪꜱᴛ\n➣1 ᴀᴋᴜɴ ᴜᴛᴀᴍᴀ + 4 ᴀꜱɪꜱᴛ\n➣1 ᴀᴋᴜɴ ᴜᴛᴀᴍᴀ + 5 ᴀꜱɪꜱᴛ\n➣ʙᴏᴛᴘʀᴏᴛᴇᴄᴛ 3-11 ʙᴏᴛ ᴀꜱɪꜱᴛ\n➣PEMUSNAH\n➣ɴᴇᴡ ꜱᴄʀɪᴘᴛ\n➣ʜʀɢᴀ ʙɪꜱᴀ ɴᴇɢᴏ\n─────────┅┅─────────\n  ✯❇͜͡❇͜͡C͜͡r͜͡e͜͡a͜͡t͜͡o͜͡r✯͜͡$͜͡ë͜͡I͜͡F͜͡-͜͡฿͜͜͡͡o͜͡t͜͡ ͜͡❇͜͡❇✯\nhttp://line.me/ti/p/~akusayangpadamu12\n➣ѕєʟғвот κɪcκєʀ_+_ᴘʀᴏᴛᴇᴄᴛ\n────────┅┅───────")
                              jawaban = random.choice(jawab)
                              tts = gTTS(text=jawaban, lang='id')
                              tts.save('tts.mp3')
@@ -5159,7 +5219,7 @@ def bot(op):
                                cl.sendContact(to, mid)
                                cl.sendMessage(msg.to, "█░░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░░█\n█░░║║║╠─║─║─║║║║║╠─░░█\n█░░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░░█\n"
  "ASSALAMUALAIKUM\n"
-"  ╭━CANNIBAL™️\n"
+"  ╭━ᴍukͥ𝓲dͣiͫ prøte🅲t🎹\n"
 "  ╰╮┏━┳┳┓┏┳┳┓┏┳┳┳┓\n"
 "  ┏┻╋━┻┻┫┣┻┻┫┣┻┻┻┫\n"
 "  ┃HLO▪┃KMI DTANG LGI┃\n"
@@ -5186,14 +5246,14 @@ def bot(op):
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                start = time.time()
-                               cl.sendMessage(msg.to, "[CANNIBAL™️].")
+                               cl.sendMessage(msg.to, "[ᴍukͥ𝓲dͣiͫ prøte🅲t🎹].")
                                elapsed_time = time.time() - start
                                cl.sendMessage(msg.to, "╚☆Ⓢⓘⓐⓟ☆╗\n╚Ⓚⓞⓜⓐⓝⓓⓝ╮╗".format(str(elapsed_time)))
 
                         elif cmd == "harga":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
-                               cl.sendMessage(msg.to, "╭══════════\n║⚫─[     DAFTAR HARGA     ]─⚫ \n║SELFBOT ONLY = 50K /BLN\n║2 ASSIST = 100K /BLN\n║5 ASSIST = 200K /BLN\n║10 ASSIST = 350K /BLN\n║\n║PROTECT ANTIJS\n║\n║2 BOT + ANTIJS = 200K /BLN\n║5 BOT + ANTIJS = 300K /BLN\n║10 BOT + ANTIJS = 500K /BLN\n║ PEMUSNAH = 200K nego sikon\n║\n║═ই\═ANDA BERMINAT\n║ SILAHKAN ADD CONTACT \n║ DIBAWAH INI   \n║\n║http://line.me/ti/p/~aryopandelaki\n║       TERIMA KASIH      \n║\n╰════════════")
+                               cl.sendMessage(msg.to, "╭══════════\n║⚫─[     DAFTAR HARGA     ]─⚫ \n║SELFBOT ONLY = 50K /BLN\n║2 ASSIST = 100K /BLN\n║5 ASSIST = 200K /BLN\n║10 ASSIST = 350K /BLN\n║\n║PROTECT ANTIJS\n║\n║2 BOT + ANTIJS = 200K /BLN\n║5 BOT + ANTIJS = 300K /BLN\n║10 BOT + ANTIJS = 500K /BLN\n║ PEMUSNAH = 200K nego sikon\n║\n║═ই\═ANDA BERMINAT\n║ SILAHKAN ADD CONTACT \n║ DIBAWAH INI   \n║\n║http://line.me/ti/p/~akusayangpadamu12\n║       TERIMA KASIH      \n║\n╰════════════")
                                cl.sendMessage(msg.to, "Yuck di Order.... ")
                                cl.sendContact(to, mid)
 #===========Protection============#
