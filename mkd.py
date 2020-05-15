@@ -52,7 +52,7 @@ try:
     result = json.loads(requests.get(result["result"]["callback"]+"&auth="+auth).text)
     if result["status"] != 200:
       raise Exception("Timeout!!!")
-    cl = LINE(result["result"]["token"],appName="IOSIPAD\t9.18.1\tiPhone X\t12.4.1")
+    ki = LINE(result["result"]["token"],appName="IOSIPAD\t9.18.1\tiPhone X\t12.4.1")
     print("Login Sukses")
 except:pass 
 
@@ -69,7 +69,7 @@ try:
     result = json.loads(requests.get(result["result"]["callback"]+"&auth="+auth).text)
     if result["status"] != 200:
       raise Exception("Timeout!!!")
-    cl = LINE(result["result"]["token"],appName="IOSIPAD\t9.18.1\tiPhone X\t12.4.1")
+    kk = LINE(result["result"]["token"],appName="IOSIPAD\t9.18.1\tiPhone X\t12.4.1")
     print("Login Sukses")
 except:pass 
 
@@ -86,7 +86,7 @@ try:
     result = json.loads(requests.get(result["result"]["callback"]+"&auth="+auth).text)
     if result["status"] != 200:
       raise Exception("Timeout!!!")
-    cl = LINE(result["result"]["token"],appName="IOSIPAD\t9.18.1\tiPhone X\t12.4.1")
+    kj = LINE(result["result"]["token"],appName="IOSIPAD\t9.18.1\tiPhone X\t12.4.1")
     print("Login Sukses")
 except:pass
 
@@ -103,7 +103,7 @@ try:
     result = json.loads(requests.get(result["result"]["callback"]+"&auth="+auth).text)
     if result["status"] != 200:
       raise Exception("Timeout!!!")
-    cl = LINE(result["result"]["token"],appName="IOSIPAD\t9.18.1\tiPhone X\t12.4.1")
+    sw = LINE(result["result"]["token"],appName="IOSIPAD\t9.18.1\tiPhone X\t12.4.1")
     print("Login Sukses")
 except:pass 
 #==============[●●●●●●]==============#
