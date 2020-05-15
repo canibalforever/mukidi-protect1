@@ -22,90 +22,36 @@ from googletrans import Translator
 import youtube_dl
 #import pyimgflip
 
-try:
-    header = "ios_ipad"
-    auth = "Z6vMBEnkp04n"
-    result = json.loads(requests.get("https://api.boteater.us/line_qr_v2?header="+header+"&auth="+auth).text)
-    print("Login IP: {}".format(result["result"]["login_ip"]))
-    print("QR Link: {}".format(result["result"]["qr_link"]))
-    result = json.loads(requests.get(result["result"]["callback"]+"&auth="+auth).text)
-    if result["status"] != 200:
-      raise Exception("Timeout!!!")
-    print("Pincode: "+result["result"]["pin_code"])
-    result = json.loads(requests.get(result["result"]["callback"]+"&auth="+auth).text)
-    if result["status"] != 200:
-      raise Exception("Timeout!!!")
-    cl = LINE(result["result"]["token"],appName="IOSIPAD\t9.18.1\tiPhone X\t12.4.1")
-    print("Login Sukses")
-except:pass
+cl = LineClient("email","sandi")
+cl.log("Auth Token : " + str(cl.authToken))
+channel1 = LineChannel(cl,cl.server.CHANNEL_ID['LINE_TIMELINE'])
+cl.log("Channel Access Token : " + str(channel1.channelAccessToken))
 
-try:
-    header = "ios_ipad"
-    auth = "Z6vMBEnkp04n"
-    result = json.loads(requests.get("https://api.boteater.us/line_qr_v2?header="+header+"&auth="+auth).text)
-    print("Login IP: {}".format(result["result"]["login_ip"]))
-    print("QR Link: {}".format(result["result"]["qr_link"]))
-    result = json.loads(requests.get(result["result"]["callback"]+"&auth="+auth).text)
-    if result["status"] != 200:
-      raise Exception("Timeout!!!")
-    print("Pincode: "+result["result"]["pin_code"])
-    result = json.loads(requests.get(result["result"]["callback"]+"&auth="+auth).text)
-    if result["status"] != 200:
-      raise Exception("Timeout!!!")
-    ki = LINE(result["result"]["token"],appName="IOSIPAD\t9.18.1\tiPhone X\t12.4.1")
-    print("Login Sukses")
-except:pass
 
-try:
-    header = "ios_ipad"
-    auth = "Z6vMBEnkp04n"
-    result = json.loads(requests.get("https://api.boteater.us/line_qr_v2?header="+header+"&auth="+auth).text)
-    print("Login IP: {}".format(result["result"]["login_ip"]))
-    print("QR Link: {}".format(result["result"]["qr_link"]))
-    result = json.loads(requests.get(result["result"]["callback"]+"&auth="+auth).text)
-    if result["status"] != 200:
-      raise Exception("Timeout!!!")
-    print("Pincode: "+result["result"]["pin_code"])
-    result = json.loads(requests.get(result["result"]["callback"]+"&auth="+auth).text)
-    if result["status"] != 200:
-      raise Exception("Timeout!!!")
-    kk = LINE(result["result"]["token"],appName="IOSIPAD\t9.18.1\tiPhone X\t12.4.1")
-    print("Login Sukses")
-except:pass
+ki = LineClient("email","sandi")
+ki.log("Auth Token : " + str(ki.authToken))
+channel1 = LineChannel(ki,ki.server.CHANNEL_ID['LINE_TIMELINE'])
+ki.log("Channel Access Token : " + str(channel1.channelAccessToken))
 
-try:
-    header = "ios_ipad"
-    auth = "Z6vMBEnkp04n"
-    result = json.loads(requests.get("https://api.boteater.us/line_qr_v2?header="+header+"&auth="+auth).text)
-    print("Login IP: {}".format(result["result"]["login_ip"]))
-    print("QR Link: {}".format(result["result"]["qr_link"]))
-    result = json.loads(requests.get(result["result"]["callback"]+"&auth="+auth).text)
-    if result["status"] != 200:
-      raise Exception("Timeout!!!")
-    print("Pincode: "+result["result"]["pin_code"])
-    result = json.loads(requests.get(result["result"]["callback"]+"&auth="+auth).text)
-    if result["status"] != 200:
-      raise Exception("Timeout!!!")
-    kj = LINE(result["result"]["token"],appName="IOSIPAD\t9.18.1\tiPhone X\t12.4.1")
-    print("Login Sukses")
-except:pass
 
-try:
-    header = "ios_ipad"
-    auth = "Z6vMBEnkp04n"
-    result = json.loads(requests.get("https://api.boteater.us/line_qr_v2?header="+header+"&auth="+auth).text)
-    print("Login IP: {}".format(result["result"]["login_ip"]))
-    print("QR Link: {}".format(result["result"]["qr_link"]))
-    result = json.loads(requests.get(result["result"]["callback"]+"&auth="+auth).text)
-    if result["status"] != 200:
-      raise Exception("Timeout!!!")
-    print("Pincode: "+result["result"]["pin_code"])
-    result = json.loads(requests.get(result["result"]["callback"]+"&auth="+auth).text)
-    if result["status"] != 200:
-      raise Exception("Timeout!!!")
-    sw = LINE(result["result"]["token"],appName="IOSIPAD\t9.18.1\tiPhone X\t12.4.1")
-    print("Login Sukses")
-except:pass 
+kk = LineClient("email","sandi")
+kk.log("Auth Token : " + str(kk.authToken))
+channel2 = LineChannel(kk)
+kk.log("Channel Access Token : " + str(channel2.channelAccessToken))
+
+
+kc = LineClient("email","sandi")
+kc.log("Auth Token : " + str(kc.authToken))
+channel3 = LineChannel(kc)
+kc.log("Channel Access Token : " + str(channel3.channelAccessToken))
+
+
+sw = LineClient("email","sandi")
+sw.log("Auth Token : " + str(sw.authToken))
+channel4 = LineChannel(sw)
+sw.log("Channel Access Token : " + str(channel11.channelAccessToken))
+print ("LOGIN SUKSES SEMUA\n")
+print ("\nBOT MULAI BERJALAN......")
 #==============[●●●●●●]==============#
 
 oepoll = OEPoll(cl)
