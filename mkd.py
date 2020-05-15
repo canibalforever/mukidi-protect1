@@ -88,7 +88,7 @@ try:
       raise Exception("Timeout!!!")
     cl = LINE(result["result"]["token"],appName="IOSIPAD\t9.18.1\tiPhone X\t12.4.1")
     print("Login Sukses")
-except:pass ))
+except:pass
 
 try:
     header = "ios_ipad"
