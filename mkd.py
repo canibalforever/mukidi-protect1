@@ -105,11 +105,10 @@ try:
       raise Exception("Timeout!!!")
     sw = LINE(result["result"]["token"],appName="IOSIPAD\t9.18.1\tiPhone X\t12.4.1")
     print("Login Sukses")
-except:pass
-print ("LOGIN SUKSES SEMUA\n")
-print ("\nBOT MULAI BERJALAN......")
+except:pass 
+#==============[●●●●●●]==============#
 
-poll = LinePoll(cl)
+oepoll = OEPoll(cl)
 call = cl
 creator = ["uafe5c4198aa3bbceba5502798d8a2c16"]
 owner = ["uafe5c4198aa3bbceba5502798d8a2c16"]
